@@ -27,7 +27,7 @@ function mapSessionStatus(sdkStatus: import("@opencode-ai/sdk/v2").SessionStatus
       return "error"
     default:
       const _exhaustive: never = sdkStatus
-      return "idle"
+      throw new Error(`Unknown session status: ${_exhaustive}`)
   }
 }
 
