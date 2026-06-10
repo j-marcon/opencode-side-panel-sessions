@@ -17,3 +17,4 @@
 
 ### Fixed
 - Pin star reactivity: star icon now updates immediately on toggle
+- SDK peerDependency version: relaxed from `^2.0.0` to `^1.16.2` (v2 subpath exports are available since SDK 1.16.2)
