@@ -1,6 +1,6 @@
 {
   "name": "opencode-side-panel-sessions",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OpenCode TUI plugin that displays parallel/background agent sessions in the sidebar with live status, pinning, and one-click navigation",
   "type": "module",
   "engines": {
@@ -19,8 +19,15 @@
       "default": "./dist/tui.js"
     }
   },
-  "oc-plugin": ["tui"],
-  "files": ["dist", "scripts/register-tui.mjs", "README.md", "LICENSE"],
+  "oc-plugin": [
+    "tui"
+  ],
+  "files": [
+    "dist",
+    "scripts/register-tui.mjs",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "postinstall": "node scripts/register-tui.mjs",
     "build": "bun run scripts/build.ts",
@@ -37,7 +44,13 @@
     "@opencode-ai/plugin": "^1.4.3",
     "@opencode-ai/sdk": "^1.16.2"
   },
-  "keywords": ["opencode", "plugin", "tui", "sidebar", "sessions"],
+  "keywords": [
+    "opencode",
+    "plugin",
+    "tui",
+    "sidebar",
+    "sessions"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
