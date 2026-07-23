@@ -79,14 +79,14 @@ export function SessionPanel(props: SessionPanelProps) {
         <text onMouseDown={() => setCollapsed(c => !c)} attributes={TextAttributes.BOLD} marginLeft={1}>Sessions</text>
       </box>
 
-      {!collapsed() && (
+      {() => !collapsed() && (
         <>
           {/* ── Loading / Error states ─────────── */}
-          {sessions.isLoading() && <text marginLeft={1}>Loading sessions…</text>}
-          {!sessions.isLoading() && sessions.error() && <text marginLeft={1} fg="red">{sessions.error()}</text>}
+          {() => sessions.isLoading() && <text marginLeft={1}>Loading sessions…</text>}
+          {() => !sessions.isLoading() && sessions.error() && <text marginLeft={1} fg="red">{sessions.error()}</text>}
 
           {/* ── Current Session Section (top) ──── */}
-          {!sessions.isLoading() && !sessions.error() && currentSession() && (
+          {() => !sessions.isLoading() && !sessions.error() && currentSession() && (
             <box flexDirection="column">
               <text marginLeft={1} attributes={TextAttributes.BOLD | TextAttributes.DIM}>Current Session</text>
               <SessionItem
@@ -100,7 +100,7 @@ export function SessionPanel(props: SessionPanelProps) {
           )}
 
           {/* ── Pinned Section (always visible) ── */}
-          {!sessions.isLoading() && !sessions.error() && pinnedSessions().length > 0 && (
+          {() => !sessions.isLoading() && !sessions.error() && pinnedSessions().length > 0 && (
             <box flexDirection="column">
               <text marginLeft={1} attributes={TextAttributes.BOLD | TextAttributes.DIM}>Pinned</text>
               <For each={pinnedSessions()}>
@@ -118,13 +118,13 @@ export function SessionPanel(props: SessionPanelProps) {
           )}
 
           {/* ── All Sessions Section (collapsible, collapsed by default) ── */}
-          {!sessions.isLoading() && !sessions.error() && unpinnedSessions().length > 0 && (
+          {() => !sessions.isLoading() && !sessions.error() && unpinnedSessions().length > 0 && (
             <box flexDirection="column">
               <box flexDirection="row" alignItems="center">
                 <text marginLeft={1} onMouseDown={() => setAllCollapsed(c => !c)}>{allCollapsed() ? "▶" : "▼"}</text>
                 <text onMouseDown={() => setAllCollapsed(c => !c)} attributes={TextAttributes.BOLD | TextAttributes.DIM} marginLeft={1}>All Sessions</text>
               </box>
-              {!allCollapsed() && (
+              {() => !allCollapsed() && (
                 <box flexDirection="column">
                   <For each={dateGroups()}>
                     {(group) => (
