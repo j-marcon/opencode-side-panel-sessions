@@ -36,7 +36,7 @@ export function SessionPanel(props: SessionPanelProps) {
   const { sessions, navigate, log, currentSessionId } = props
 
   const [collapsed, setCollapsed] = createSignal(false)
-  const [allCollapsed, setAllCollapsed] = createSignal(true)  // All Sessions collapsed by default
+  const [allCollapsed, setAllCollapsed] = createSignal(false)  // All Sessions expanded by default
 
   const allSessions = () => sessions.sessions()
 
