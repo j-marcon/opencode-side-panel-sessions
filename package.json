@@ -1,6 +1,6 @@
 {
   "name": "opencode-side-panel-sessions",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "OpenCode TUI plugin that displays parallel/background agent sessions in the sidebar with live status, pinning, and one-click navigation",
   "type": "module",
   "engines": {
