@@ -14,7 +14,7 @@ function truncateTitle(title: string, maxLength: number): string {
 export interface SessionItemProps {
   session: SessionInfo
   togglePin: (id: string) => void
-  navigate: (name: string, params?: Record<string, unknown>) => void
+  navigate: (sessionID: string) => void
   log: (message: string) => void
   marginLeft?: number
 }
@@ -29,7 +29,7 @@ export function SessionItem(props: SessionItemProps) {
 
   function handleNavigate() {
     try {
-      navigate("session", { sessionID: session.id })
+      navigate(session.id)
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "unknown navigation error"
       log(`SessionItem: navigation failed for ${session.id}: ${message}`)

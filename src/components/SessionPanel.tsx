@@ -27,7 +27,7 @@ function getDateBucket(date: Date): string {
 
 export interface SessionPanelProps {
   sessions: SessionsStore
-  navigate: (name: string, params?: Record<string, unknown>) => void
+  navigate: (sessionID: string) => void
   log: (message: string) => void
   currentSessionId?: string
 }

@@ -4,13 +4,13 @@ import { ensureSolidTransformPlugin } from "@opentui/solid/bun-plugin"
 ensureSolidTransformPlugin()
 
 const result = await Bun.build({
-  entrypoints: ["./src/tui.tsx"],
+  entrypoints: ["./tui.tsx"],
   outdir: "./dist",
   target: "node",
   format: "esm",
   external: [
-    "@opencode-ai/plugin",
-    "@opencode-ai/sdk",
+    "@opencode/plugin",
+    "@opencode/client",
     "@opentui/solid",
     "@opentui/core",
     "solid-js",

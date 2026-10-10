@@ -24,6 +24,7 @@
   ],
   "files": [
     "dist",
+    "tui.tsx",
     "scripts/register-tui.mjs",
     "README.md",
     "LICENSE"
@@ -36,13 +37,12 @@
     "check": "tsc --noEmit"
   },
   "dependencies": {
-    "@opentui/solid": "^0.2.8",
-    "@opentui/core": "^0.2.8",
+    "@opentui/solid": "^0.5.17",
+    "@opentui/core": "^0.5.17",
     "solid-js": "^1.9.12"
   },
   "peerDependencies": {
-    "@opencode-ai/plugin": "^1.4.3",
-    "@opencode-ai/sdk": "^1.16.2"
+    "@opencode/plugin": "^2.0.26"
   },
   "keywords": [
     "opencode",

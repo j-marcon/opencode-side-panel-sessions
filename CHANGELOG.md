@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.0] — 2026-10-10
+
+### Changed
+- Migrated to the OpenCode V2 plugin API (`Plugin.define`, `sidebar.content` slot); V1 (`tui.json`, `@opencode-ai/*`) no longer supported
+- Plugin entrypoint moved to package-root `tui.tsx` (required for local directory plugins); `dist/` build kept for published installs
+- Pin storage moved to durable plugin storage (survives restarts, syncs across TUI instances)
+- Postinstall registration targets `cli.json` instead of `tui.json`
+- Status derived from V2 live status plus session outcome (adds complete/error/stopped)
+- `@opentui/*` bumped to `^0.5.17` (required by `@opencode/plugin` 2.x)
+
 ## [0.1.0] — 2026-06-10
 
 ### Added
